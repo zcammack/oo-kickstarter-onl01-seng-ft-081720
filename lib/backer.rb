@@ -11,9 +11,10 @@ class Backer
   def projects
     Project.all.select { | projects | project.backers == self }
   end
+  
   def back_project(project)
     @backed_projects << project
-    projects.each do |project|
+    backed_projects.each do |project|
       project.backers << self
     end
   end
